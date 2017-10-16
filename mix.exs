@@ -1,4 +1,4 @@
-defmodule NervesSystemRpi0.Mixfile do
+defmodule NervesSystemFarmbotRpi0.Mixfile do
   use Mix.Project
 
   @version Path.join(__DIR__, "VERSION")
@@ -6,7 +6,7 @@ defmodule NervesSystemRpi0.Mixfile do
     |> String.trim
 
   def project do
-    [app: :nerves_system_rpi0,
+    [app: :nerves_system_farmbot_rpi0,
      version: @version,
      elixir: "~> 1.4",
      compilers: Mix.compilers ++ [:nerves_package],
@@ -38,6 +38,6 @@ defmodule NervesSystemRpi0.Mixfile do
     [maintainers: ["Timothy Mecklem", "Frank Hunleth"],
     files: ["LICENSE", "mix.exs", "nerves_defconfig", "nerves.exs", "README.md", "VERSION", "rootfs_overlay", "fwup.conf", "cmdline.txt", "linux-4.4.defconfig", "config.txt", "post-createfs.sh"],
      licenses: ["Apache 2.0"],
-     links: %{"Github" => "https://github.com/nerves-project/nerves_system_rpi0"}]
+     links: %{"Github" => "https://github.com/nerves-project/nerves_system_farmbot_rpi0"}]
   end
 end

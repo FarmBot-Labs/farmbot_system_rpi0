@@ -1,6 +1,6 @@
 # Raspberry Pi Model Zero
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_rpi0.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_rpi0)
-[![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi0.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi0)
+[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_farmbot_rpi0.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_farmbot_rpi0)
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_farmbot_rpi0.svg "Hex version")](https://hex.pm/packages/nerves_system_farmbot_rpi0)
 
 This is the base Nerves System configuration for the Raspberry Pi Zero and
 Raspberry Pi Zero W.
@@ -51,11 +51,11 @@ is probably more appropriate for your setup.
 
 ## Installation
 
-Add `nerves_system_rpi0` to your list of dependencies in mix.exs:
+Add `nerves_system_farmbot_rpi0` to your list of dependencies in mix.exs:
 
 ```
   def deps do
-    [{:nerves_system_rpi0, "~> 0.16.0"}]
+    [{:nerves_system_farmbot_rpi0, "~> 0.16.0"}]
   end
 ```
 [Image credit](#fritzing): This image is from the [Fritzing](http://fritzing.org/home/) parts library.

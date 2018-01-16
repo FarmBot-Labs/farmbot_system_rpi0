@@ -1,6 +1,51 @@
 # Changelog
 
+## v0.20.0
+
+Important: This image removes kernel log messages from the HDMI and UART ports.
+They are now only available via `dmesg`. If you're debugging a boot hang, you
+can re-enable prints by updating the cmdline.txt. See README.md.
+
+  * Updated dependencies
+    * [nerves_system_br v0.16.1-2017-11](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.16.1-2017-11)
+
+  * Bug fixes
+    * Removed kernel logging from UART and HDMI to avoid interfering with other
+      uses. They are rarely used on those ports.
+
+  * Enhancements
+    * Reboot automatically if Erlang VM exits - This is consistent with other
+      Nerves systems. See rootfs_overlay/etc/erlinit.config if undesired.
+    * Start running nerves_system_linter to check for configuration errors.
+    * Disable console blanking for HDMI to make it easier to capture error messages.
+    * Automount the boot partition readonly at `/boot`
+    * Support for reverting firmware. 
+      
+      See [Reverting Firmware](https://hexdocs.pm/nerves_runtime/readme.html#reverting-firmware) for more info on reverting firmware.
+      
+      See [fwup-revert.conf](https://github.com/nerves-project/nerves_system_rpi/blob/master/fwup-revert.conf) for more information on how fwup handles reverting.
+
+## v0.19.2
+
+  * Bug fixes
+    * Updated toolchains to 0.12.1 which fixes issues with missing app files.
+
+## v0.19.1
+
+  * Bug fixes
+    * Rollback release due to errors with toolchains not defining erlang app files
+
+## v0.19.0
+
+  * Updated dependencies
+    * [nerves_system_br v0.15.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.15.1)
+    * [nerves v0.8.3](https://github.com/nerves-project/nerves/releases/tag/v0.8.3)
+    * [nerves_toolchain_armv6_rpi_linux_gnueabi v0.12.0](https://github.com/nerves-project/toolchains/releases/tag/v0.12.0)
+  * Enhancements
+    * Support for nerves 0.8.x Moved nerves.exs to mix.exs
+
 ## v0.18.2
+
   Updated dependencies
   * [nerves_system_br v0.14.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.14.1)
 

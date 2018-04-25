@@ -1,10 +1,10 @@
-defmodule NervesSystemFarmbotRpi0.Mixfile do
+defmodule NervesSystemRpi0.MixProject do
   use Mix.Project
 
   @app :nerves_system_farmbot_rpi0
   @version Path.join(__DIR__, "VERSION")
-    |> File.read!
-    |> String.trim
+           |> File.read!()
+           |> String.trim()
 
   def project do
     [
@@ -16,7 +16,8 @@ defmodule NervesSystemFarmbotRpi0.Mixfile do
       description: description(),
       package: package(),
       deps: deps(),
-      aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
+      aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
+      docs: [extras: ["README.md"], main: "readme"]
     ]
   end
 
@@ -24,11 +25,17 @@ defmodule NervesSystemFarmbotRpi0.Mixfile do
     []
   end
 
-  def nerves_package do
+  defp bootstrap(args) do
+    System.put_env("MIX_TARGET", "rpi0")
+    Application.start(:nerves_bootstrap)
+    Mix.Task.run("loadconfig", args)
+  end
+
+  defp nerves_package do
     [
       type: :system,
-      artifact_url: [
-        "https://github.com/farmbot-labs/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz",
+      artifact_sites: [
+        {:github_releases, "farmbot-labs/#{@app}"}
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -40,10 +47,11 @@ defmodule NervesSystemFarmbotRpi0.Mixfile do
 
   defp deps do
     [
-      {:nerves, "~> 0.8", runtime: false },
-      {:nerves_system_br, "0.16.3", runtime: false},
-      {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 0.12.1", runtime: false},
-      {:nerves_system_linter, "~> 0.2.2", runtime: false}
+      {:nerves, "~> 1.0-rc", runtime: false},
+      {:nerves_system_br, "~> 1.0-rc", runtime: false},
+      {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 1.0-rc", runtime: false},
+      {:nerves_system_linter, "~> 0.3.0", runtime: false},
+      {:ex_doc, "~> 0.18", only: :dev}
     ]
   end
 
@@ -78,5 +86,10 @@ defmodule NervesSystemFarmbotRpi0.Mixfile do
       "linux-4.4.defconfig",
       "config.txt"
     ]
+  end
+
+  # Copy the images referenced by docs, since ex_doc doesn't do this.
+  defp copy_images(_) do
+    File.cp_r("assets", "doc/assets")
   end
 end

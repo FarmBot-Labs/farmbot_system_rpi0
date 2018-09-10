@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.4.0-farmbot.0
+
+Apply Farmbot Patches
+
+* Updated dependencies
+  * Enable `dnsmasq`
+  * Enable more serial drivers in kernel.
+  * Enable v4l drivers in kernel
+  * Enable python2
+  * Enable opencv2.4
+
+* New features
+  * Enable sound in `config.txt`
+
+
 ## v1.4.0
 
 This release contains various updates to provisioning variables and data.

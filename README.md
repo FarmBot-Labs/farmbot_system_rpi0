@@ -21,12 +21,12 @@ appropriate for your setup.
 | Storage              | MicroSD                         |
 | Linux kernel         | 4.14 w/ Raspberry Pi patches    |
 | IEx terminal         | OTG USB serial port (`ttyGS0`). Can be changed to HDMI or UART. |
-| GPIO, I2C, SPI       | Yes - Elixir ALE                |
+| GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | ADC                  | No                              |
 | PWM                  | Yes, but no Elixir support      |
 | UART                 | 1 available - `ttyAMA0`         |
 | Camera               | Yes - via rpi-userland          |
-| Ethernet             | Yes - via OTG USB port          |
+| Ethernet             | No                              |
 | WiFi                 | Supported on the Pi Zero W      |
 | Bluetooth            | Not supported yet               |
 | Audio                | HDMI/Stereo out                 |

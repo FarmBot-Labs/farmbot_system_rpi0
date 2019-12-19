@@ -1,8 +1,60 @@
 # Changelog
 
-## v1.8.0-farmbot.0
+## v1.10.0
 
-* Merge Upstream system
+This release updates Buildroot to 2019.11 with security and bug fix updates
+across Linux packages. Enables dnsd, udhcpd and ifconfig in the default 
+Busybox configuration to support `vintage_net` and `vintage_net_wizard`. 
+See the `nerves_system_br` notes for details.
+
+* Updated dependencies
+  * [nerves_system_br v1.10.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.10.0)
+  * Erlang 22.1.8
+
+## v1.9.2
+
+This release updates Buildroot to 2019.08.2 with security and bug fix updates
+across Linux packages. See the `nerves_system_br` notes for details.
+Erlang/OTP is now at 22.1.7.
+
+* Updated dependencies
+  * [nerves_system_br v1.9.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.9.5)
+
+## v1.9.1
+
+This release pulls in security and bug fix updates from `nerves_system_br`.
+Erlang/OTP is now at 22.1.1.
+
+* Updated dependencies
+  * [nerves_system_br v1.9.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.9.4)
+  * linux - update to the raspberrypi-kernel_1.20190925-1 tag
+
+## v1.9.0
+
+This release updates Buildroot to 2019.08 with security and bug fix updates
+across Linux packages. See the `nerves_system_br` notes for details.
+
+* Updated dependencies
+  * [nerves_system_br v1.9.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.9.2)
+
+## v1.8.2
+
+This release fixes an issue that broke display output on small LCD screens.
+Updating the Raspberry Pi firmware to the latest from the Raspberry Pi
+Foundation fixed the issue. See
+https://github.com/fhunleth/rpi_fb_capture/issues/2 for details.
+
+* Updated dependencies
+  * [nerves_system_br v1.8.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.8.5)
+
+## v1.8.1
+
+* Updated dependencies
+  * [nerves_system_br v1.8.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.8.4)
+  * Linux 4.19.58 with patches from the Raspberry Pi Foundation
+
+## v1.8.0-farmbot.0
+  * merge upstream systems
 
 ## v1.8.0
 
